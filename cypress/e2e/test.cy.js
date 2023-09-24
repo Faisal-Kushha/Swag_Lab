@@ -27,7 +27,6 @@ describe("Swag Lab", () => {
     //   cy.login(usernames[i], "secret_sauce");
     // }
 
-    // cy.add_to_cart(Math.random(3));
     cy.wait(2000);
     cy.get(".btn").first().click();
     cy.get(".btn").eq(3).click();
@@ -50,9 +49,17 @@ describe("Swag Lab", () => {
     cy.wait(1000);
 
     cy.get('[data-test="finish"]').click();
+    cy.wait(1000);
+
     cy.get(".complete-header").invoke("text").should("contain", "Thank you");
-    // cy.get('[data-test="back-to-products"]').click();
-    // cy.get("#react-burger-menu-btn").click();
-    // cy.get("#logout_sidebar_link").click();
+    cy.wait(1000);
+
+    cy.get('[data-test="back-to-products"]').click();
+    cy.wait(1000);
+
+    cy.get("#react-burger-menu-btn").click();
+    cy.wait(1000);
+
+    cy.get("#logout_sidebar_link").click();
   });
 });
